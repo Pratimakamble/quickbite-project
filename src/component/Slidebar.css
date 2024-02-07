@@ -1,0 +1,14 @@
+.slidebar{
+    width: 350px;
+    height: 100vh;
+    background: linear-gradient(to bottom right,orange, rgb(224, 222, 79));
+    position: absolute;
+    top: o;
+    left:0;
+    transform: translateX(-100%);
+    transition: all 0.4s ease-in-out;
+
+}
+.collapse{
+    transform: translateX(0%);
+}
