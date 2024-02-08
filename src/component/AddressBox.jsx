@@ -11,9 +11,9 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
 
   const handleSubmitBtn = (data) => {
     if (data.Address && data.city && data.landmark) {
-      alert(`successfully saved ${data.Address}`);
-      console.log(data);
+      alert(`successfully saved`);
       reset();
+      setIsClicked(!isClicked);
     } else {
       alert("Data Not entered ");
     }
