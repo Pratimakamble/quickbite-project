@@ -81,12 +81,18 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
           </div>
           <div className="w-full flex  my-2 h-10 border-2 border-orange-400 relative">
             {otherClicked && (
-              <input
-                {...register("others")}
-                type="text"
-                className="w-full h-full absolute outline-none border-[1px]"
-                placeholder="Dads home ,friends home"
-              />
+              <>
+                <input
+                  {...register("others")}
+                  type="text"
+                  className="w-full h-full absolute outline-none border-[1px]"
+                  placeholder="Dads home ,friends home"
+                />
+                <i
+                  onClick={() => setOtherClicked(!otherClicked)}
+                  className="bx bx-x text-3xl cursor-pointer absolute right-0"
+                ></i>
+              </>
             )}
 
             <div
