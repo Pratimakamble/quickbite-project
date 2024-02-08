@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Address.css";
 import AddressBox from "./AddressBox";
+import { useNavigate } from "react-router-dom";
 const Address = () => {
+  const navigate = useNavigate()
   const [isClicked, setIsClicked] = useState(false);
   return (
     <>
@@ -23,7 +25,9 @@ const Address = () => {
 
         <AddressBox isClicked={isClicked} setIsClicked={setIsClicked} />
 
-        <div className="payment">Payment</div>
+        <div onClick={()=>{
+          navigate('/payment')
+        }} className="payment">Payment</div>
       </div>
     </>
   );

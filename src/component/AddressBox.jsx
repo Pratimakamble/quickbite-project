@@ -12,11 +12,11 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
   const navigate = useNavigate();
   const handleSubmitBtn = (data) => {
     if (data.Address && data.city && data.landmark) {
-      const res = window.confirm("Do you want to proceed further");
+      const res = window.confirm("Do you want to proceed with payments");
 
       if (res) {
-        reset();
-        setIsClicked(!isClicked);
+        navigate("/payment")
+       
       }
     } else {
       alert("Data Not entered ");
@@ -143,7 +143,7 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
             <input
               className="w-full outline-none"
               type="submit"
-              value="Save address"
+              value="Save add proceed"
             />
           </div>
         </form>
