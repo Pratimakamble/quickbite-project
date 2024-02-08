@@ -40,11 +40,7 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
               className="bx bx-window-close text-3xl cursor-pointer"
             ></i>
           </div>
-          {/* <img
-            className="w-full h-full overflow-hidden"
-            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*DMEPtaZPmIjdwALQSbMcaA.jpeg"
-            alt=""
-          /> */}
+
           <div className="w-full h-full overflow-hidden">
             <iframe
               className="w-full h-full"
