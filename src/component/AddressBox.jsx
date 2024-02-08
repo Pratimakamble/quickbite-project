@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import GoogleMapReact from "google-map-react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 const AddressBox = ({ isClicked, setIsClicked }) => {
   const {
     register,
@@ -9,11 +9,15 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
   const handleSubmitBtn = (data) => {
     if (data.Address && data.city && data.landmark) {
-      alert(`successfully saved`);
-      reset();
-      setIsClicked(!isClicked);
+      const res = window.confirm("Do you want to proceed further");
+
+      if (res) {
+        reset();
+        setIsClicked(!isClicked);
+      }
     } else {
       alert("Data Not entered ");
     }
