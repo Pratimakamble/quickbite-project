@@ -5,19 +5,17 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
+   
   } = useForm();
 
   const navigate = useNavigate();
-  const handleSubmitBtn = (data) => {
-    if (data.Address && data.city && data.landmark) {
-      const res = window.confirm("Do you want to proceed with payments");
+  const handleSubmitBtn = (data,e) => {
 
-      if (res) {
-        navigate("/payment")
-       
-      }
+    if (data.Address && data.city && data.landmark) {
+      const res = window.confirm("Do you want to proceed with Payment");
+
+      {res &&  navigate("/payment")}
+      
     } else {
       alert("Data Not entered ");
     }
@@ -32,9 +30,10 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
           isClicked ? "left-0 top-0" : "-left-[115%]"
         } bg-white  top-0  flex justify-start items-center gap-5 shadow-lg p-5`}
       >
-        <div className="absolute top-5 left-[30%] text-3xl font-bold text-orange-400">
+        <div className="absolute top-3 left-[30%] text-3xl font-bold text-orange-400">
           Save delivery address
         </div>
+       
         <div className="gmap w-72 h-60 border-2 relative">
           <div className="absolute -top-[30%] -left-[15%]">
             <i
@@ -49,9 +48,8 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
             <iframe
               className="w-full h-full"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.70906459657!2d73.69814984457464!3d18.52487061439116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707366390417!5m2!1sen!2sin"
-              allowFullscreen=""
-              loading="lazy"
-              reFerrerPolicy="no-referrer-when-downgrade"
+        
+            
             ></iframe>
           </div>
         </div>
@@ -73,6 +71,14 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
               className="w-full outline-none"
               type="text"
               placeholder="Enter your city"
+            />
+          </div>
+          <div className="w-full py-2 border-[1px] my-2 border-orange-400">
+            <input
+              {...register("pin")}
+              className="w-full outline-none"
+              type="number"
+              placeholder="Enter PinCode"
             />
           </div>
           <div className="w-full py-2  my-2 border-[1px] border-orange-400">
@@ -139,7 +145,7 @@ const AddressBox = ({ isClicked, setIsClicked }) => {
             </div>
           </div>
 
-          <div className="w-full rounded-lg bg-orange-400 text-white font-semibold hover:bg-orange-500 transition-all ease-in-out duration-200 py-2 ">
+          <div className="w-full rounded-lg bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold  hover:from-yellow-400 hover:to-orange-400 transition-all ease-in-out duration-200 py-2 ">
             <input
               className="w-full outline-none"
               type="submit"

@@ -13,6 +13,7 @@ const Body = () => {
     
         <Address />
         <FoodCard number={number} setNumber={setNumber} />
+        
       
     )
   </div>

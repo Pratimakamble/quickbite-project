@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./FoodCard.css";
 import burger from "../asset/burger2.jpg";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const FoodCard = () => {
   const [number, setNumber] = useState(1);
@@ -45,6 +46,7 @@ const FoodCard = () => {
                 setTotalPrice((totalPrice = totalPrice - price));
                 setTotalAmt((totalAmt = totalAmt - price));
               } else {
+               
                 navigate("/empty");
               }
             }}
